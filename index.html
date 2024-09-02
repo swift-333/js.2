@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        // 1 Задание
+
+        let a = 1, b = 1, c, d;
+
+        c = ++a;
+        alert(c); // 2
+
+        //Увеличиваем переменную a на единицу, получаем 2.
+        //Присваиваем переменной c - 2.
+
+
+        d = b++;
+        alert(d); // 1
+
+        // например Р = Х++ (если Х = 5, то, в Х запишется 6, но в Р запишется 5 - предыдущее значение, т. е. значение
+        // до выполнения постфиксной операции)
+        // d - присвоено 1 и тк. это постфиксная операция, то присвоится не 2, а 1
+
+        c = 2 + ++a;
+        alert(c); //5
+
+        //Увеличиваем переменную a на единицу, получаем 3 (уже было 2).
+        //Складываем 2 плюс "++a"(2)
+
+        d = 2 + b++;
+        alert(d); // 4
+
+        //Складываем 2 плюс (b)1, получаем 3
+        //Складываем 3 плюс (b)1, тк b++ - постфиксное выражение
+
+        alert(a); //3 выводим a
+        alert(b); //3 выводим b
+
+        // 2. Задание
+
+        let a = 2;
+        let x = 1 + (a *= 2);
+        console.log(a);
+        console.log(x);
+        alert(a);
+        alert(x);
+
+        //1. Переменной a присваиваем 2
+        //2. Переменной переменной x присваиваем:
+        //- Переменную a умножаем 2, получаем 4
+        //- Переменной a присваиваем 4
+        //- К переменной a прибавляем 1, получаем 5
+
+        // 3. Задание
+
+
+        let a = -1;
+        let b = 9;
+        console.log(Math.sign(a));
+        console.log(Math.sign(b));
+
+        startUp();
+
+        function startUp(){
+            a = +prompt("Введите первое число");
+            b = +prompt("Введите второе число");
+            if(validationCheck(a) === validationCheck(b) && validationCheck(b) === true){
+                positiveCheck(a,b);
+                negativeCheck(a,b);
+                differentSignsCheck(a,b);
+            }
+            else{
+                alert('Задано не целое число');
+                startUp();
+            }
+        }
+
+        function positiveCheck(a, b){
+            if(Math.sign(a) === Math.sign(b) && Math.sign(b) === 1)
+                alert(`${a} и ${b} положительные. Разность равна: '${a-b}'`)
+        }
+
+        function negativeCheck(a, b){
+            if(Math.sign(a) === Math.sign(b) && Math.sign(b) === -1)
+                alert(`${a} и ${b} отрицательные. Произведение равно: '${a*b}'`)
+        }
+
+        function differentSignsCheck(a, b){
+            if(Math.sign(a) != Math.sign(b))
+                alert(`${a} и ${b} разные знаки. Сумма равна: '${a+b}'`)
+        }
+
+        // 4. Задание
+
+
+        function sum(a, b) {
+            return a + b;
+        }
+
+        function diff(a,b){
+            return a - b;
+        }
+
+        function mult(a, b){
+            return a * b;
+        }
+
+        function div(a, b){
+            return a / b;
+        }
+
+        // 5. Задание
+
+        let arg1 = prompt("Введите первое число");
+        let operation = prompt("Введите действие ('+', '-', '*', '/')");
+        let arg2 = prompt("Введите второе число");
+        alert(`Результат: ${mathOperation(arg1, arg2, operation)}`);
+
+        function mathOperation(arg1, arg2, operation){
+            switch(operation){
+                case "+":
+                    return sum(arg1, arg2);
+                case "-":
+                    return diff(arg1, arg);
+                case "*":
+                    return mult(arg1, arg2);
+                case "/":
+                    return div(arg1, arg2);
+                default:
+                    alert(`Не допустимая операция: '${operation}'`)
+            }
+
+        }
+
+        function sum(a, b) {
+            return a + b;
+        }
+
+        function diff(a,b){
+            return a - b;
+        }
+
+        function mult(a, b){
+            return a * b;
+        }
+
+        function div(a, b){
+            return a / b;
+        }
+
+
+        // 6 Задание
+
+        const getEnd = (num) => {
+            switch(num){
+                case 0:
+                    return "рублей";
+                case 1:
+                    return "рубль" ;
+                case 2:
+                    return "рубля";
+                case 3:
+                    return "рубля";
+                case 4:
+                    return "рубля";
+                case 5:
+                    return "рубля";
+                case 6:
+                    return "рубля";
+                case 7:
+                    return "рубля";
+                case 8:
+                    return "рубля";
+                case 9:
+                    return "рубля";
+
+
+            switch(num){
+                case 0:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                    return "рублей";
+                case 1:
+                    return "рубль" ;
+                case 2:
+                case 3:
+                case 4:
+                    return "рубля";
+            }
+
+        }
+
+        const input = prompt("Введите денежную сумму:");
+        const inputNum = +input;
+
+        if (isNaN(inputNum) || inputNum === 0) {
+            alert("Введите цифры");
+        } else {
+            alert("Принято");
+        }
+
+            // статья по условиям
+
+        }// нужна блокировка дальнейшего действия см 5 урок 1 задание
+
+        input.length - 1 // место последней буквы в слове
+
+        input[input.length - 1]  // поиск буквы по его месту
+
+        const lastSymbol = lastSymbol.length - 1 // нужно получить последнюю букву см. 167, 165
+        const lastNum = +lastSymbol;
+
+
+        const end = getEnd(lastNum);
+
+        alert("Получена сумма" + input + end);
+
+        // 6 Задание итог
+
+        const getEnd = (num) => {
+            switch(num){
+                case 0:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                    return "рублей";
+                case 1:
+                    return "рубль" ;
+                case 2:
+                case 3:
+                case 4:
+                    return "рубля";
+            }
+
+        }
+
+        const input = prompt("Введите денежную сумму:");
+        const inputNum = +input;
+
+        if (isNaN(inputNum) || inputNum === 0) {
+            alert("Введите цифры");
+        }  else {
+
+            // статья по условиям// нужна блокировка дальнейшего действия см 5 урок 1 задание
+
+            //input.length - 1 // место последней буквы в слове
+
+            //input[input.length - 1];  // поиск буквы по его месту
+
+            const lastSymbol = input[input.length - 1]; // нужно получить последнюю букву см. 167, 165
+            const lastNum = +lastSymbol;
+
+
+            const end = getEnd(lastNum);
+
+            alert("Получена сумма" + ' ' + input + ' ' + end + ' ' );
+        }
+
+
+        
+    </script>
+
+</body>
+</html>
